@@ -531,7 +531,7 @@ cdef class UniformFloatHyperparameter(FloatHyperparameter):
             else:
                 default_value = (self.lower + self.upper) / 2.
         # default_value = np.round(float(default_value), 10)
-        default_value = float(float(default_value), 10)
+        default_value = float(np.round(default_value, 10))
         if self.is_legal(default_value):
             return default_value
         else:
